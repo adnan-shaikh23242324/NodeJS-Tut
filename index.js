@@ -1,8 +1,7 @@
 import http from "http";
-import gfName from "./features.js";
-import {gfName2} from "./features.js";
+import * as myObj from "./features.js";
 
-console.log(gfName2);
+console.log(myObj);
 const server = http.createServer((req,res) => {
     if(req.url === "/about"){
          res.end("<h1>About Page</h1>")
