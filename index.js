@@ -1,12 +1,18 @@
 import http from "http";
-import * as myObj from "./features.js";
+import { generateLovePercent } from "./features.js";
+// import fs from "fs";
+import path from 'path';
 
-console.log(myObj);
+console.log(path.dirname("/home/random/index.html"));
+
+// const home = fs.readFileSync("./index.html");
+// console.log(home);
+// console.log(generateLovePercent());
 const server = http.createServer((req,res) => {
     if(req.url === "/about"){
-         res.end("<h1>About Page</h1>")
+         res.end(`<h1>LOve is ${generateLovePercent()}</h1>`)
         }else if(req.url === "/"){
-            res.end("<h1>Home Page</h1>")
+            res.end(home)
            }else if(req.url === "/contact"){
             res.end("<h1>Contact Page</h1>")
            }
